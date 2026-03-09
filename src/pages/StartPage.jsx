@@ -51,7 +51,8 @@ function StartPage() {
         isCheckInAndOutValid(checkIn, checkOut);
 
   return (
-    <div className="d-flex justify-content-center align-items-center py-5">
+    <div className="container py-5" >
+    <div className="d-flex justify-content-center">
       <div
         className="card shadow-lg border-0 p-4"
         style={{ maxWidth: "500px", width: "100%", borderRadius: "15px" }}
@@ -173,6 +174,7 @@ function StartPage() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

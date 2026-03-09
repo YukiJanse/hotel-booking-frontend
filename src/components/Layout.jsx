@@ -3,10 +3,10 @@ import Footer from "./Footer";
 
 function Layout({ children }) {
     return (
-        <div className="d-flex flex-column min-vh-100 min-vw-100 bg-light">
+        <div className="d-flex flex-column min-vh-100">
             <Header />
-            <main className="container d-flex flex-grow-1 pt-3 justify-content-center align-items-center py-4">
-                <div className="w-100">
+            <main className="flex-grow-1 py-4 px-3">
+                <div className="container-fluid">
                     {children}
                 </div>
             </main>
