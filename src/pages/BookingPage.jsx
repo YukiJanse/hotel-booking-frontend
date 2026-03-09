@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -30,7 +31,7 @@ function BookingPage() {
             <p className="text-muted">
               Tack {name}! Du har bokat från {firstDate} till {lastDate}.
             </p>
-            <a href="./my-booking">Check your booking</a>
+            <Link to="/my-booking" className="btn btn-primary">Check your booking</Link>
           </div>
         ) : (
           <>
