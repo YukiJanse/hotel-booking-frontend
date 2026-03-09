@@ -5,7 +5,7 @@ function Footer() {
                 <h2>Hotel Booking</h2>
             </div>
             <div className="p-3 me-3 text-white ms-auto">
-                <p  class="small text-secondary">&copy; 2026 Yuki Janse</p>
+                <p  className="small text-secondary">&copy; 2026 Yuki Janse</p>
             </div>
         </footer>
     );

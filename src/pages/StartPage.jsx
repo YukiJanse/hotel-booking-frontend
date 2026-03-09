@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function StartPage() {
@@ -11,6 +12,14 @@ function StartPage() {
     const [touched, setTouched] = useState({
         name: false, email: false, checkIn: false, checkOut: false
     })
+    const [searchParams] = useSearchParams();
+    const chosenRoomType = searchParams.get("roomType");
+
+    useEffect(() => {
+      if (chosenRoomType) {
+        setRoom(chosenRoomType);
+      }
+    });
 
     const today = new Date().toISOString().split("T")[0];
 

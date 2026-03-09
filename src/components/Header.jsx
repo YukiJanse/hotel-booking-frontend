@@ -8,9 +8,9 @@ function Header() {
                 <ul className="list-unstyled d-flex flex-row">
                     <li><Link className="navbar-brand text-white" to="/">Top</Link></li>
                     <li><Link className="navbar-brand text-white" to="/my-booking">My booking</Link></li>
-                    <li><Link className="navbar-brand text-white" to="/">Room list</Link></li>
-                    <li><Link className="navbar-brand text-white" to="/">About us</Link></li>
-                    <li><Link className="navbar-brand text-white" to="/">Contact</Link></li>
+                    <li><Link className="navbar-brand text-white" to="/room-list">Room list</Link></li>
+                    <li><Link className="navbar-brand text-white" to="/about-us">About us</Link></li>
+                    <li><Link className="navbar-brand text-white" to="/contact">Contact</Link></li>
                 </ul>
             </nav>
         </header>
