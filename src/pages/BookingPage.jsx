@@ -27,9 +27,9 @@ function BookingPage() {
       >
         {isBooked ? (
           <div className="text-center">
-            <h2 className="text-success mb-3">✔ Bokningen är bekräftad</h2>
+            <h2 className="text-success mb-3">✔ The booking is comfirmed!</h2>
             <p className="text-muted">
-              Tack {name}! Du har bokat från {firstDate} till {lastDate}.
+              Thank you {name}! You have booked from {firstDate} to {lastDate}.
             </p>
             <Link to="/my-booking" className="btn btn-primary">Check your booking</Link>
           </div>
