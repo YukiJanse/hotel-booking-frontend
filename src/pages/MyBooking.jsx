@@ -2,10 +2,29 @@ import { useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function MyBooking() {
-    const bookingData = JSON.parse(localStorage.getItem("booking"));
+    const [bookingData, setBookingData] = useState(
+        JSON.parse(localStorage.getItem("booking"))
+    );
+
+    const cancelBooking = () => {
+        setBookingData(null);
+        localStorage.removeItem("booking");
+    }
 
     if (!bookingData) {
-        return <p>No booking data found</p>
+        return <div
+        className="d-flex justify-content-center align-items-center py-5">
+            <div
+            className="card shadow-lg border-0 p-4"
+            style={{ maxWidth: "500px", width: "100%", borderRadius: "15px" }}
+            >
+                <h3 className="mb-4 text-center">Booking Information</h3>
+
+                <p className="text-center">No booking data found</p>
+            </div>
+        </div>
+        
+        
     }
 
     return (
@@ -38,6 +57,7 @@ function MyBooking() {
                     <strong>{bookingData.lastDate}</strong>
                 </li>
                 </ul>
+                <button className="btn btn-primary" onClick={ cancelBooking }>Cancel the booking</button>
             </div>
         </div>
     );
