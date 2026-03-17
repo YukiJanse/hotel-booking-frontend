@@ -15,6 +15,8 @@ function StartPage() {
   const [touched, setTouched] = useState({
       name: false, email: false, checkIn: false, checkOut: false
   })
+  const isDateTouched = touched.checkIn && touched.checkOut;
+
   const [searchParams] = useSearchParams();
   const chosenRoomType = searchParams.get("roomType");
 
@@ -69,9 +71,9 @@ function StartPage() {
   }));
 };
 
-  const inputClass = (field, valid) => 
+  const inputClass = (isTouched, valid) => 
     `form-control ${
-      touched[field] ? (valid ? "is-valid" : "is-invalid") : ""
+      isTouched ? (valid ? "is-valid" : "is-invalid") : ""
     }`;
 
 
@@ -88,7 +90,7 @@ function StartPage() {
           <label className="form-label">Your Name</label>
           <input
             type="text"
-            className={inputClass("name", isValid.name)}
+            className={inputClass(touched.name, isValid.name)}
             placeholder="Enter your name"
             value={form.name}
             onChange={handleChange("name")}
@@ -105,7 +107,7 @@ function StartPage() {
           <label className="form-label">Email</label>
           <input
             type="email"
-            className={inputClass("email", isValid.email)}
+            className={inputClass(touched.email, isValid.email)}
             placeholder="Enter your email address"
             value={form.email}
             onChange={handleChange("email")}
@@ -122,7 +124,7 @@ function StartPage() {
           <label className="form-label">Select Check-in Date</label>
           <input
             type="date"
-            className={inputClass("checkIn", isValid.dates)}
+            className={inputClass(isDateTouched, isValid.dates)}
             min={today}
             value={form.checkIn}
             onChange={handleChange("checkIn")}
@@ -139,7 +141,7 @@ function StartPage() {
           <label className="form-label">Select Check-out Date</label>
           <input
             type="date"
-            className={inputClass("checkOut", isValid.dates)}
+            className={inputClass(isDateTouched, isValid.dates)}
             min={oneDayAfter(form.checkIn || today)}
             value={form.checkOut}
             onChange={handleChange("checkOut")}
